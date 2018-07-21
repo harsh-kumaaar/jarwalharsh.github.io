@@ -247,4 +247,8 @@ kbd{
         max-width: 750px;
         min-width: 750px;
     }
+
+    .blog-content p{
+        font-weight: 500;
+    }
 }
