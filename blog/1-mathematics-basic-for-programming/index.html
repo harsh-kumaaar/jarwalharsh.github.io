@@ -1,14 +1,12 @@
 <!doctype html>
-<html amp>
+<html>
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <title>Jarwal Harsh</title>
-  <meta name="description" content="Jarwalharsh.com is personal blog website of Harsh Kumar. " >
-  <link rel="canonical" href="./index.html">
+  <title>Mathematics Basics for programming.</title>
+  <meta name="description" content="mathematics basics for programming.">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,900"> 
-  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
     /* @import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,900'); */
     html,
@@ -318,58 +316,75 @@
       }
     }
   </style>
-  </head>
-  <body>
-    <header>
-      <h1>Harsh Kumar</h1>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Blogs</a>
-          </li>
-          <li>
-            <a href="/projects/">Projects</a>
-          </li>
-          <li>
-            <a href="/about/">About</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="blog-list-container">
-        <h2>Blogs</h2>
-        <ul class="blog-list">
-          <!-- List Item Start -->
-          <li>
-            <span class="overline">
-              <span class="category">Programming</span>
-              <time>October 22, 2018</time> 
-            </span>
-            <div class="title">
-              Mathematics Basics for programming
-            </div>
-            <div class="subtitle2">
-              Mathematics Basics
-            </div>
-            <div class="read-more"><a href="/blog/1-mathematics-basic-for-programming/">Read Article</a></div>
-         </li>
-          <li>
-             <span class="overline">
-               <span class="category">Web Development</span>
-               <time>Jun 28, 2018</time> 
-             </span>
-             <div class="title">
-               Hello World
-             </div>
-             <div class="subtitle2">
-               Test Article. Lets start sharing.
-             </div>
-             <div class="read-more"><a href="/blog/hello-world/">Read Article</a></div>
-          </li>
-          <!-- List Item End -->
-        </ul>
-      </section>
-    </main>
-  </body>
+</head>
+
+<body>
+  <header>
+    <h1>Harsh Kumar</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Blogs</a>
+        </li>
+        <li>
+          <a href="/projects/">Projects</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="blog">
+    <section class="blog-content">
+      <h2>Mathematics Basics for programming</h2>
+      <div class="overline">
+        <span>Programming</span>
+        <time>October 22, 2018</time>
+      </div>
+      <h3>1. Series</h3>
+      <p>
+        Sum of first n integer:
+        <div class="eq">$$ \sum_{i=1}^{n}{i} = \frac{n(n+1)}{2}  $$</div>
+        Sum of squares of first n integer.
+        <div class="eq">$$ \sum_{i=1}^{n}{i^2} = \frac{n(n+1)(2n+1)}{6} $$</div>
+        Sum of cubes of first n integer.
+        <div class="eq">
+            $$ \sum_{i=1}^{n}{i^3} = \left(\sum_{i=1}^{n}{i}\right)^2 = \left(\frac{n(n+1)}{2} \right)^2 $$
+        </div>
+      </p>
+      <h3>2. Fast Exponentiation</h3>
+      <p>
+        Recursive copmutation of a<sup>n</sup> :
+        <pre>
+          int power(int a, int n){
+            if(n==0) return 1;
+            if(n==1) return a;
+            int temp = power(a,n/2);
+
+            // if odd multiply with a one more time
+            int temp2 = power(a,n%2);
+            return temp2 * temp * temp;
+          }
+        </pre>
+      </p>
+      <h3>3. Greatest Common Divisor</h3>
+      <p>
+        gcd(a,b) gives largest integer which divides both a and b. <br>
+        gcd(a,b) = gcd(a,b-a); <br>
+        gcd(a,0) = a;<br>
+        gcd(a,b) is smallest positive number in $$  ax + by | x,y \epsilon \mathbb{Z}  $$
+       </p>
+    </section>
+  </main>
+  <footer>
+
+  </footer>
+</body>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("End Jax",function () {
+    return MathJax.Hub.setRenderer("SVG");
+  });
+  </script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
 </html>
